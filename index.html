@@ -121,7 +121,8 @@
             width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-          <a href="https://maps.app.goo.gl/MhecQBJFDKmyVLUF6" target="_blank" class="btn btn-light btn-primary my-3">Klik untuk
+          <a href="https://maps.app.goo.gl/MhecQBJFDKmyVLUF6" target="_blank"
+            class="btn btn-light btn-primary my-3">Klik untuk
             membuka peta</a>
           <p class="description">Diharapkan untuk tidak salah alamat dan tanggal. Manakala tiba di tujuan namun tidak
             ada tanda-tanda sedang dilangsungkan pernikahan, boleh jadi Anda salah jadwal, atau salah tempat.</p>
@@ -173,13 +174,12 @@
     </div>
   </section>
 
-    <section id="gallery" class="gallery">
+  <section id="gallery" class="gallery">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8 col-10 text-center">
           <span>Memori Kisah Kami</span>
           <h2>Galeri Foto</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, itaque?</p>
         </div>
       </div>
 
@@ -236,29 +236,26 @@
         action="https://script.google.com/macros/s/AKfycbxzP9sopKkOlXGNxjfL185Eei34Bh0heDp6hK1cy5pXtS3NUF2gukmyNc6XOeXAeAfylA/exec"
         id="my-form">
         <div class="col-12">
-          <div class="mb-3">
-            <label for="nama" class="form-label">Nama</label>
-            <input type="text" class="form-control" id="nama" name="nama">
-          </div>
+          <label for="nama" class="form-label">Nama</label>
+          <input type="text" class="form-control" id="nama" name="nama" required>
         </div>
+
         <div class="col-12">
-          <div class="mb-3">
-            <label for="jumlah" class="form-label">Jumlah</label>
-            <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1" value="1">
-          </div>
+          <label for="jumlah" class="form-label">Jumlah</label>
+          <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" required>
         </div>
+
         <div class="col-12">
-          <div class="mb-3">
-            <label for="status" class="form-label">Konfirmasi</label>
-            <select name="status" id="status" class="form-select">
-              <option selected>Pilih salah satu</option>
-              <option value="Hadir">Hadir</option>
-              <option value="Tidak Hadir">Tidak Hadir</option>
-            </select>
-          </div>
+          <label for="status" class="form-label">Konfirmasi</label>
+          <select class="form-select" id="status" name="status" required>
+            <option value="">Pilih salah satu</option>
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+          </select>
         </div>
-        <div class="col-12" style="margin-top: 35px;">
-          <button class="btn btn-primary">Kirim</button>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Kirim</button>
         </div>
       </form>
 
