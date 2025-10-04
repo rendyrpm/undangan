@@ -82,10 +82,9 @@ body {
 .home {
   background-image: url(img/bg-utama.jpg);
   background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   min-height: 100vh;
-  margin-top: -6rem;
-  padding-top: 15rem;
-  padding-bottom: 5rem;
 }
 
 .home h2,
