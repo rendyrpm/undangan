@@ -182,10 +182,20 @@ body {
 
 .story,
 .gallery,
-.rsvp,
+.rsvp{
+  background-color: var(--bg);
+  color: white;
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+}
 .gifts {
   padding-top: 10rem;
   padding-bottom: 8rem;
+  background-image: url(img/bg-utama.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 .story span,
