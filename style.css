@@ -318,6 +318,12 @@ body {
   background-image: url(img/bg-utama.jpg);
 }
 
+/* Simple Gallery Carousel */
+.gallery #galleryCarousel {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .rsvp {
   background-color: var(--bg);
 }
