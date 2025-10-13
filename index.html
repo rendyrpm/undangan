@@ -30,6 +30,7 @@
     class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
     <main>
       <h4>Kepada <span>Bapak/Ibu/Saudara/i, </span></h4>
+      <h4 id="nama-tamu">Tamu Undangan</h4>
       <h1>Isal & Alma</h1>
       <p>Akan melangsungkan resepsi pernikahan dalam:</p>
       <div class="simply-countdown"></div>
@@ -425,6 +426,22 @@
     namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ',');
 
     document.querySelector('#nama').value = nama;
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // ambil path URL setelah /to-
+      const path = window.location.pathname;
+      const match = path.match(/to-([^\/]+)/);
+
+      if (match) {
+        const nama = decodeURIComponent(match[1].replace(/-/g, ' '));
+        const target = document.getElementById("nama-tamu");
+
+        if (target) {
+          target.textContent = nama;
+        }
+      }
+    });
   </script>
 </body>
 
