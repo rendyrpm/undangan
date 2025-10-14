@@ -486,3 +486,93 @@ footer li {
     top: 31px;
   }
 }
+
+/* Scroll Animation Styles */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.zoom-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Khusus untuk heart icon */
+.heart.zoom-in {
+  transform: translateX(-50%) translateY(65px) scale(0);
+}
+
+.heart.zoom-in.visible {
+  transform: translateX(-50%) translateY(65px) scale(1);
+}
+
+/* Fade in biasa */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Delay untuk sequential animation */
+.fade-up:nth-of-type(1) {
+  transition-delay: 0s;
+}
+
+.fade-up:nth-of-type(2) {
+  transition-delay: 0.1s;
+}
+
+.fade-up:nth-of-type(3) {
+  transition-delay: 0.2s;
+}
+
+/* Animasi untuk cards */
+.card.fade-up {
+  transition-delay: 0s;
+}
+
+.card.fade-up:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.card.fade-up:nth-child(2) {
+  transition-delay: 0.3s;
+}
