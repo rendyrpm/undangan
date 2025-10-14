@@ -25,3 +25,8 @@
 .simply-countdown > .simply-section .simply-amount {
   font-size: 1.6rem;
 }
+
+.simply-countdown > .simply-section {
+  background: rgba(0, 0, 0, 0.8); /* hitam transparan */
+  color: #fff;
+}
