@@ -34,7 +34,7 @@
       <h1>Isal & Alma</h1>
       <p>Akan melangsungkan resepsi pernikahan dalam:</p>
       <div class="simply-countdown"></div>
-      <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()">Lihat Undangan</a>
+      <a href="#quran-verse" class="btn btn-lg mt-4" onClick="enableScroll()">Lihat Undangan</a>
     </main>
 
   </section>
@@ -66,6 +66,34 @@
 
   <section id="main-content" class="main-content">
     <div class="container">
+
+      <section id="quran-verse" class="section-content quran-verse-section">
+        <div class="container">
+          <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-md-8 col-10">
+              <div class="verse-container">
+                <div class="flower-decoration">
+                  <span style="font-size: 3rem;">🌸</span>
+                </div>
+                <p class="verse-text">
+                  "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari
+                  jenismu
+                  sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih
+                  dan
+                  sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kekuasaan Allah) bagi
+                  kaum
+                  yang berpikir."
+                </p>
+                <p class="verse-reference">(Qs. Ar-Rum : 21)</p>
+                <div class="scroll-indicator">
+                  <i class="bi bi-chevron-down"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Home Section -->
       <div id="home" class="section-content">
         <div class="row justify-content-center">
@@ -216,7 +244,8 @@
             <span class="visually-hidden">Next</span>
           </button>
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
@@ -443,35 +472,56 @@
     });
   </script>
   <script>
-  // Simple Scroll Animation
-  function scrollAnimation() {
-    const elements = document.querySelectorAll('.fade-up, .slide-left, .slide-right, .zoom-in, .fade-in');
-    
-    elements.forEach(element => {
-      const elementPosition = element.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight / 1.2;
-      
-      if (elementPosition < screenPosition) {
-        element.classList.add('visible');
+    // Simple Scroll Animation
+    function scrollAnimation() {
+      const elements = document.querySelectorAll('.fade-up, .slide-left, .slide-right, .zoom-in, .fade-in, .verse-container');
+
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+
+        if (elementPosition < screenPosition) {
+          element.classList.add('visible');
+        }
+      });
+    }
+
+    // Jalankan saat scroll
+    window.addEventListener('scroll', scrollAnimation);
+
+    // Jalankan saat halaman load
+    window.addEventListener('load', scrollAnimation);
+
+    // Jalankan setelah enableScroll dipanggil
+    const originalEnableScroll = window.enableScroll;
+    if (originalEnableScroll) {
+      window.enableScroll = function () {
+        originalEnableScroll();
+
+        // Trigger animasi verse container setelah scroll enabled
+        setTimeout(() => {
+          const verseContainer = document.querySelector('.verse-container');
+          if (verseContainer) {
+            verseContainer.classList.add('visible');
+          }
+        }, 200);
+
+        // Jalankan scroll animation
+        setTimeout(scrollAnimation, 300);
+      }
+    }
+
+    // Scroll indicator click handler
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrollIndicator = document.querySelector('.scroll-indicator');
+      if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', function () {
+          document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
+        });
       }
     });
-  }
-
-  // Jalankan saat scroll
-  window.addEventListener('scroll', scrollAnimation);
-  
-  // Jalankan saat halaman load
-  window.addEventListener('load', scrollAnimation);
-  
-  // Jalankan setelah enableScroll dipanggil
-  const originalEnableScroll = window.enableScroll;
-  if (originalEnableScroll) {
-    window.enableScroll = function() {
-      originalEnableScroll();
-      setTimeout(scrollAnimation, 100);
-    }
-  }
-</script>
+  </script>
+  </script>
 </body>
 
 </html>
