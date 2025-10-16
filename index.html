@@ -42,25 +42,8 @@
   <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
     <div class="container">
       <a class="navbar-brand" href="#">IsAlma</a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Dino</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="#home">Home</a>
-            <a class="nav-link" href="#info">Info</a>
-            <a class="nav-link" href="#gallery">Gallery</a>
-            <a class="nav-link" href="#rsvp">RSVP</a>
-            <a class="nav-link" href="#gifts">Gifts</a>
-          </div>
-        </div>
-      </div>
+      
+
     </div>
   </nav>
 
@@ -294,28 +277,63 @@
 
       <!-- Gifts Section -->
       <div id="gifts" class="section-content">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center">  
           <div class="col-md-8 col-10 text-center">
-            <span class="fade-up">ungkapan tanda kasih</span>
+            <span class="fade-up">Ungkapan tanda kasih</span>
             <h2 class="fade-up">Kirim Hadiah</h2>
+            <p class="fade-up">Anda dapat memberikan hadiah melalui:</p>
           </div>
         </div>
 
         <div class="row justify-content-center text-center">
-          <div class="col-md-6 zoom-in">
-            <ul class="list-group">
-              <li class="list-group-item">
-                <div class="fw-bold">BCA</div>
-                8681043772 - MUHAMMAD FAISAL
-              </li>
-              <li class="list-group-item">
-                <div class="fw-bold">BCA</div>
-                5725703632 - DINA DESTA SALMA
-              </li>
-            </ul>
+          <div class="col-md-5 col-10 mb-4 zoom-in">
+            <div class="gift-card">
+              <div class="bank-logo">
+                <img src="img/bca.png" alt="BCA" class="bank-img">
+              </div>
+              <div class="gift-divider"></div>
+              <div class="account-info">
+                <p class="account-label">Account Number</p>
+                <div class="account-number">
+                  <span id="acc-number-1">8681043772</span>
+                  <button class="btn-copy" onclick="copyToClipboard('8681043772', 1)">
+                    <i class="bi bi-clipboard"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="gift-divider"></div>
+              <div class="account-name">
+                <p class="name-label">Account Name</p>
+                <p class="name-text">Muhammad Faisal</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-10 mb-4 zoom-in">
+            <div class="gift-card">
+              <div class="bank-logo">
+                <img src="img/bca.png" alt="BCA" class="bank-img">
+              </div>
+              <div class="gift-divider"></div>
+              <div class="account-info">
+                <p class="account-label">Account Number</p>
+                <div class="account-number">
+                  <span id="acc-number-2">5725703632</span>
+                  <button class="btn-copy" onclick="copyToClipboard('5725703632', 2)">
+                    <i class="bi bi-clipboard"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="gift-divider"></div>
+              <div class="account-name">
+                <p class="name-label">Account Name</p>
+                <p class="name-text">Dina Desta Salma</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -521,7 +539,35 @@
       }
     });
   </script>
-  </script>
+  <script>
+  // Copy to Clipboard Function
+  function copyToClipboard(text, buttonId) {
+    // Copy text to clipboard
+    navigator.clipboard.writeText(text).then(function() {
+      // Get the button
+      const button = document.querySelector(`#acc-number-${buttonId}`).nextElementSibling;
+      const icon = button.querySelector('i');
+      
+      // Change icon and add copied class
+      icon.classList.remove('bi-clipboard');
+      icon.classList.add('bi-check2');
+      button.classList.add('copied');
+      
+      // Show success message
+      alert('Nomor rekening berhasil disalin!');
+      
+      // Reset after 2 seconds
+      setTimeout(() => {
+        icon.classList.remove('bi-check2');
+        icon.classList.add('bi-clipboard');
+        button.classList.remove('copied');
+      }, 2000);
+    }).catch(function(err) {
+      alert('Gagal menyalin nomor rekening');
+      console.error('Could not copy text: ', err);
+    });
+  }
+</script>
 </body>
 
 </html>

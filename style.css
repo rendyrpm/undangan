@@ -68,6 +68,10 @@ body {
   height: 100vh;
 }
 
+.mynavbar .container {
+  justify-content: center;
+}
+
 .mynavbar .navbar-brand,
 .mynavbar .offcanvas-title {
   font-family: 'Sacramento', cursive;
@@ -284,10 +288,36 @@ body {
   font-family: 'Sacramento';
   font-size: 2.4rem;
   color: var(--pink);
+  margin-bottom: 1rem;
+}
+
+.main-content .couple p {
+  margin-bottom: 0.5rem;
 }
 
 .main-content .couple img {
   width: 100%;
+}
+
+/* Align items center untuk semua row di dalam couple */
+.main-content .couple .row {
+  display: flex;
+  align-items: center;
+}
+
+/* Styling khusus untuk kolom teks - KURANGI PADDING */
+.main-content .couple .text-end {
+  padding-right: 0.5rem; /* Dikurangi dari 2rem */
+}
+
+.main-content .couple .col-8:not(.text-end) {
+  padding-left: 0.5rem; /* Dikurangi dari 2rem */
+}
+
+/* Kurangi padding pada kolom foto juga */
+.main-content .couple .col-4 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .main-content .heart {
@@ -300,6 +330,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%) translateY(65px);
+  z-index: 10;
 }
 
 .main-content .heart i {
@@ -307,6 +338,33 @@ body {
   color: var(--pink);
 }
 
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .main-content .couple .text-end,
+  .main-content .couple .col-8:not(.text-end) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .main-content .couple .row {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content .couple .col-8 {
+    text-align: center !important;
+  }
+
+  .main-content .couple .text-end {
+    text-align: center !important;
+  }
+  
+  .main-content .couple .col-4 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
 .main-content .alamat {
   font-size: 1.1rem;
 }
@@ -479,10 +537,155 @@ body {
 }
 
 /* Gifts Styling */
-.main-content #gifts .list-group-item {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #ddd;
+.main-content #gifts {
+  padding-bottom: 8rem;
+}
+
+.main-content #gifts h2 {
+  margin-bottom: 1rem;
+}
+
+.main-content #gifts p {
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.gift-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gift-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.bank-logo {
+  margin-bottom: 1.5rem;
+}
+
+.bank-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.gift-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ddd, transparent);
+  margin: 1.5rem 0;
+}
+
+.account-info {
+  margin-bottom: 1.5rem;
+}
+
+.account-label {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   margin-bottom: 0.5rem;
+}
+
+.account-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Courier New', monospace;
+}
+
+.btn-copy {
+  background: var(--pink);
+  border: none;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-copy:hover {
+  background: #0d2a4d;
+  transform: scale(1.1);
+}
+
+.btn-copy i {
+  font-size: 1rem;
+}
+
+.btn-copy.copied {
+  background: #28a745;
+}
+
+.account-name {
+  margin-top: 1.5rem;
+}
+
+.name-label {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.name-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--pink);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gift-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .bank-img {
+    height: 40px;
+  }
+
+  .account-number {
+    font-size: 1.3rem;
+  }
+
+  .btn-copy {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gift-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .bank-img {
+    height: 35px;
+  }
+
+  .account-number {
+    font-size: 1.1rem;
+    flex-wrap: wrap;
+  }
+
+  .name-text {
+    font-size: 1rem;
+  }
 }
 
 /* Simple Gallery Carousel */
