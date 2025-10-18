@@ -59,6 +59,77 @@ body {
   color: white;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: 0 1.5rem;
+  }
+
+  .hero main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+    width: 100%;
+  }
+
+  /* Bagian atas (judul dan nama pasangan) */
+  .hero-top {
+    margin-top: 1.5rem;
+  }
+
+  .hero-top h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-top h1 {
+    font-size: 4.5rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Bagian bawah (countdown + tombol) */
+  .hero-bottom {
+    margin-bottom: 1rem;
+  }
+
+  .hero-bottom p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-bottom .simply-countdown {
+    margin-bottom: 2rem;
+  }
+
+  .hero a.btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero main {
+    height: 92vh;
+  }
+
+  .hero-top h4 {
+    font-size: 1.1rem;
+  }
+
+  .hero-top h1 {
+    font-size: 4rem;
+  }
+
+  .hero-bottom p {
+    font-size: 1rem;
+  }
+}
+
 .mynavbar {
   background-color: rgba(255, 255, 255, 0.3) !important;
   backdrop-filter: blur(4px);
@@ -221,53 +292,66 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .quran-verse-section {
-    padding-top: 6rem !important;
+  #quran-verse .row {
+    min-height: 100vh !important; /* tetap 1 layar penuh */
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .verse-container {
-    padding: 3rem 2rem;
-    border-radius: 20px;
-  }
-
-  .verse-text {
-    font-size: 1.1rem;
-    line-height: 2;
-  }
-
-  .verse-reference {
-    font-size: 1rem;
+    padding: 6rem 3rem;
+    border-radius: 30px;
+    transform: scale(1.2); /* perbesar box */
+    max-width: 90%; /* lebar hampir penuh layar */
   }
 
   .flower-decoration span {
-    font-size: 2.5rem;
+    font-size: 4rem; /* lebih besar */
+  }
+
+  .verse-text {
+    font-size: 1.5rem; /* teks besar */
+    line-height: 2.4;
+    margin-bottom: 3rem;
+  }
+
+  .verse-reference {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .scroll-indicator i {
+    font-size: 3rem;
+  }
+
+  .scroll-indicator {
+    bottom: -2rem;
   }
 }
 
 @media (max-width: 576px) {
-  .quran-verse-section {
-    padding-top: 5rem !important;
-  }
-
   .verse-container {
-    padding: 2.5rem 1.5rem;
+    padding: 5.5rem 2.5rem;
+    border-radius: 25px;
+    transform: scale(1.25); /* sedikit lebih besar di HP kecil */
+    max-width: 92%;
   }
 
   .verse-text {
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 1.6rem;
+    line-height: 2.5;
   }
 
   .verse-reference {
-    font-size: 0.9rem;
-  }
-
-  .scroll-indicator {
-    bottom: -3rem;
+    font-size: 1.5rem;
   }
 
   .flower-decoration span {
-    font-size: 2rem;
+    font-size: 4.5rem;
+  }
+
+  .scroll-indicator i {
+    font-size: 3.2rem;
   }
 }
 
@@ -956,4 +1040,66 @@ footer li {
 
 .card.fade-up:nth-child(2) {
   transition-delay: 0.3s;
+}
+
+/* ==============================
+   Countdown Mobile Adjustment
+   ============================== */
+@media (max-width: 768px) {
+  /* Atur countdown jadi sejajar */
+  .simply-countdown {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* sejajar satu baris */
+    gap: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .simply-countdown > .simply-section {
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .simply-countdown .simply-amount {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  .simply-countdown .simply-word {
+    font-size: 0.9rem;
+  }
+
+  /* Atur jarak tombol undangan */
+  .hero-bottom .btn {
+    margin-top: 0.8rem; /* lebih dekat ke countdown */
+  }
+}
+
+@media (max-width: 576px) {
+  .simply-countdown > .simply-section {
+    width: 60px;
+    height: 60px;
+  }
+
+  .simply-countdown .simply-amount {
+    font-size: 1.2rem;
+  }
+
+  .simply-countdown .simply-word {
+    font-size: 0.8rem;
+  }
+
+  .hero-bottom .btn {
+    margin-top: 0.6rem;
+  }
 }

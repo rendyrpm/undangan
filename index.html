@@ -29,12 +29,17 @@
   <section id="hero"
     class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
     <main>
-      <h4>Kepada <span>Bapak/Ibu/Saudara/i, </span></h4>
-      <h4 id="nama-tamu">Tamu Undangan</h4>
-      <h1>Isal & Alma</h1>
-      <p>Akan melangsungkan resepsi pernikahan dalam:</p>
-      <div class="simply-countdown"></div>
-      <a href="#quran-verse" class="btn btn-lg mt-4" onClick="enableScroll()">Lihat Undangan</a>
+      <div class="hero-top">
+        <h4>Kepada <span>Bapak/Ibu/Saudara/i, </span></h4>
+        <h4 id="nama-tamu">Tamu Undangan</h4>
+        <h1>Isal & Alma</h1>
+      </div>
+
+      <div class="hero-bottom">
+        <p>Akan melangsungkan resepsi pernikahan dalam:</p>
+        <div class="simply-countdown"></div>
+        <a href="#quran-verse" class="btn btn-lg mt-4" onClick="enableScroll()">Lihat Undangan</a>
+      </div>
     </main>
 
   </section>
@@ -275,7 +280,7 @@
 
       <!-- Gifts Section -->
       <div id="gifts" class="section-content">
-        <div class="row justify-content-center">  
+        <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
             <span class="fade-up">Ungkapan tanda kasih</span>
             <h2 class="fade-up">Kirim Hadiah</h2>
@@ -538,34 +543,34 @@
     });
   </script>
   <script>
-  // Copy to Clipboard Function
-  function copyToClipboard(text, buttonId) {
-    // Copy text to clipboard
-    navigator.clipboard.writeText(text).then(function() {
-      // Get the button
-      const button = document.querySelector(`#acc-number-${buttonId}`).nextElementSibling;
-      const icon = button.querySelector('i');
-      
-      // Change icon and add copied class
-      icon.classList.remove('bi-clipboard');
-      icon.classList.add('bi-check2');
-      button.classList.add('copied');
-      
-      // Show success message
-      alert('Nomor rekening berhasil disalin!');
-      
-      // Reset after 2 seconds
-      setTimeout(() => {
-        icon.classList.remove('bi-check2');
-        icon.classList.add('bi-clipboard');
-        button.classList.remove('copied');
-      }, 2000);
-    }).catch(function(err) {
-      alert('Gagal menyalin nomor rekening');
-      console.error('Could not copy text: ', err);
-    });
-  }
-</script>
+    // Copy to Clipboard Function
+    function copyToClipboard(text, buttonId) {
+      // Copy text to clipboard
+      navigator.clipboard.writeText(text).then(function () {
+        // Get the button
+        const button = document.querySelector(`#acc-number-${buttonId}`).nextElementSibling;
+        const icon = button.querySelector('i');
+
+        // Change icon and add copied class
+        icon.classList.remove('bi-clipboard');
+        icon.classList.add('bi-check2');
+        button.classList.add('copied');
+
+        // Show success message
+        alert('Nomor rekening berhasil disalin!');
+
+        // Reset after 2 seconds
+        setTimeout(() => {
+          icon.classList.remove('bi-check2');
+          icon.classList.add('bi-clipboard');
+          button.classList.remove('copied');
+        }, 2000);
+      }).catch(function (err) {
+        alert('Gagal menyalin nomor rekening');
+        console.error('Could not copy text: ', err);
+      });
+    }
+  </script>
 </body>
 
 </html>
