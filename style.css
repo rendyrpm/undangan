@@ -325,7 +325,7 @@ body {
   .verse-container {
     padding: 6rem 3rem;
     border-radius: 30px;
-    transform: scale(1.2); /* perbesar box */
+    transform: scale(1.2) translateY(-50px); /* perbesar box */
     max-width: 90%; /* lebar hampir penuh layar */
   }
 
