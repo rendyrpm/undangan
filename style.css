@@ -325,7 +325,7 @@ body {
   .verse-container {
     padding: 6rem 3rem;
     border-radius: 30px;
-    transform: scale(1.2) translateY(-50px); /* perbesar box */
+    transform: scale(1.2); /* perbesar box */
     max-width: 90%; /* lebar hampir penuh layar */
   }
 
@@ -350,6 +350,12 @@ body {
 
   .scroll-indicator {
     bottom: -2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .verse-container {
+    transform: scale(1.2) translateY(-60px) !important;
   }
 }
 
