@@ -83,12 +83,12 @@ body {
   }
 
   .hero-top h4 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 0.3rem;
   }
 
   .hero-top h1 {
-    font-size: 4.5rem;
+    font-size: 5.2rem;
     margin-top: 0.5rem;
   }
 
@@ -98,7 +98,7 @@ body {
   }
 
   .hero-bottom p {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     margin-bottom: 1.5rem;
   }
 
@@ -182,6 +182,7 @@ body {
 .quran-verse {
   padding-top: 8rem !important;
   padding-bottom: 5rem !important;
+  margin-top: 10px;
   /* Background akan mengikuti dari .main-content */
 }
 
