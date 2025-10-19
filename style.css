@@ -133,24 +133,24 @@ body {
 /* —— Besarkan HERO benar-benar di mobile ——————————————— */
 @media (max-width: 768px) {
   .hero-top h4 {
-    font-size: 22px !important;
-    line-height: 1.4 !important;
+    font-size: 18px !important;
+    line-height: 1.2 !important;
   }
 
   .hero-top h1 {
-    font-size: 60px !important;   /* naik drastis, tidak kena root rem */
+    font-size: 55px !important;   /* naik drastis, tidak kena root rem */
     line-height: 1.1 !important;
   }
 
   .hero-bottom p {
-    font-size: 18px !important;
+    font-size: 15px !important;
   }
 }
 
 /* Tambahan untuk mobile kecil */
 @media (max-width: 576px) {
-  .hero-top h1 { font-size: 64px !important; }
-  .hero-top h4 { font-size: 24px !important; }
+  .hero-top h1 { font-size: 60px !important; }
+  .hero-top h4 { font-size: 20px !important; }
 }
 
 .mynavbar {
@@ -1130,21 +1130,4 @@ footer li {
 
 html, body {
   overflow-x: hidden !important;
-}
-
-/* ——— Rapatkan antara foto & teks (override paling bawah) ——— */
-.main-content .couple .col-4,
-.main-content .couple .col-8 {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* Hilangkan jarak bawah judul nama pasangan */
-.main-content .couple h3 {
-  margin-bottom: 0.2rem !important;
-}
-
-/* Hilangkan jarak bawah paragraf orang tua */
-.main-content .couple p {
-  margin-bottom: 0 !important;
 }
