@@ -469,20 +469,37 @@
   <script>
     window.addEventListener("load", function () {
       const form = document.getElementById('my-form');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
+
+        // tampilkan loading pada tombol
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      Mengirim...
+    `;
+
         const data = new FormData(form);
         const action = e.target.action;
+
         fetch(action, {
           method: 'POST',
           body: data,
         })
           .then(() => {
             alert("Konfirmasi kehadiran berhasil terkirim!");
+            form.reset();
           })
+          .finally(() => {
+            // kembalikan tombol seperti semula
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+          });
       });
     });
-
   </script>
   <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -574,7 +591,7 @@
         button.classList.add('copied');
 
         // Show success message
-        alert('Nomor rekening berhasil disalin!');
+        //alert('Nomor rekening berhasil disalin!');
 
         // Reset after 2 seconds
         setTimeout(() => {
