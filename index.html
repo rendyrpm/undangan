@@ -7,7 +7,7 @@
   <title>Isal & Alma Wedding</title>
   <meta name="description" content="Undangan Pernikahan Muhammad Faisal & Dina Desta Salma">
   <!-- Open Graph Meta Tags (Facebook, WhatsApp, LinkedIn) -->
-  <meta property="og:title" content="Isal & Alma Wedding - Undangan Pernikahan">
+  <meta property="og:title" content="Isal & Alma - Undangan Pernikahan">
   <meta property="og:description" content="Undangan Pernikahan Muhammad Faisal & Dina Desta Salma">
   <meta property="og:image" content="https://kisahbersama.my.id/img/preview-card.jpg">
   <meta property="og:image:width" content="1200">
@@ -102,7 +102,7 @@
         <div class="row justify-content-center">
           <div class="col-md-8 text-center">
             <h2 class="fade-up">Acara Pernikahan</h2>
-            <h3 class="fade-up">Diselenggarakan pada 1 November 2025 di Gunung Putri, Jawa Barat.</h3>
+            <h3 class="fade-up">Diselenggarakan pada 8 November 2025 di Citayam, Jawa Barat.</h3>
             <p class="fade-up">Oleh karena itu, dengan segala hormat, kami bermaksud untuk mengundang Bapak/Ibu,
               Saudara/i, untuk hadir
               pada acara pernikahan kami. </p>
@@ -145,17 +145,17 @@
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
             <h2 class="fade-up">Informasi Acara</h2>
-            <p class="alamat fade-up">Alamat: Kp. Poncol Rt 01 Rw 02. <br> Desa Tlajung Udik, Kec. Gunung Putri, Bogor.
+            <p class="alamat fade-up">Alamat: Jl. Talang 5, Rw. Panjang. <br> Kecamatan Bojonggede, Kabupaten Bogor.
             </p>
 
             <div class="zoom-in">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d991.1530482342224!2d106.91164192844683!3d-6.443814666962519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMjYnMzcuNyJTIDEwNsKwNTQnNDQuMiJF!5e0!3m2!1sen!2sid!4v1759382857787!5m2!1sen!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5453911845552!2d106.8095608!3d-6.4523568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e9f08e60bb3b%3A0x75e4751d2938ad3e!2smushollah%20al%20hidayah!5e0!3m2!1sen!2sid!4v1761140885642!5m2!1sen!2sid"
                 width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
-            <a href="https://maps.app.goo.gl/MhecQBJFDKmyVLUF6" target="_blank"
+            <a href="https://maps.app.goo.gl/Sg9eHEyg6Cscuctk8" target="_blank"
               class="btn btn-light btn-primary my-3 fade-up">Klik untuk
               membuka peta</a>
             <p class="description fade-up">Diharapkan untuk tidak salah alamat dan tanggal. Manakala tiba di tujuan
@@ -187,16 +187,16 @@
           </div>
           <div class="col-md-5 col-10">
             <div class="card text-center text-bg-light fade-up">
-              <div class="card-header">Resepsi</div>
+              <div class="card-header">Resepsi unduh mantu</div>
               <div class="card-body">
                 <div class="row justify-content-center">
                   <div class="col-md-6">
                     <i class="bi bi-clock d-block"></i>
-                    <span>11.00 - selesai</span>
+                    <span>09.00 - selesai</span>
                   </div>
                   <div class="col-md-6">
                     <i class="bi bi-calendar3 d-block"></i>
-                    <span>Sabtu, 1 November 2025</span>
+                    <span>Sabtu, 8 November 2025</span>
                   </div>
                 </div>
               </div>
@@ -362,7 +362,7 @@
       <div class="row">
         <div class="col text-center">
           <small class="block">&copy; 2025 Kisah Bersama. Part of</small>
-          <small class="block"><a href="https://instagram.com/cakrawalogy">@cakrawalogy</a>.</small>
+          <small class="block"><a href="https://instagram.com/cakrawalogy">@cakrawalogy</a></small>
 
         </div>
       </div>
@@ -468,21 +468,38 @@
   </script>
   <script>
     window.addEventListener("load", function () {
-      const form = document.getElementById('my-form');
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const data = new FormData(form);
-        const action = e.target.action;
-        fetch(action, {
-          method: 'POST',
-          body: data,
-        })
-          .then(() => {
-            alert("Konfirmasi kehadiran berhasil terkirim!");
-          })
-      });
-    });
+  const form = document.getElementById('my-form');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.innerHTML;
 
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // tampilkan loading pada tombol
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `
+      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      Mengirim...
+    `;
+
+    const data = new FormData(form);
+    const action = e.target.action;
+
+    fetch(action, {
+      method: 'POST',
+      body: data,
+    })
+      .then(() => {
+        alert("Konfirmasi kehadiran berhasil terkirim!");
+        form.reset();
+      })
+      .finally(() => {
+        // kembalikan tombol seperti semula
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      });
+  });
+});
   </script>
   <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -574,7 +591,7 @@
         button.classList.add('copied');
 
         // Show success message
-        alert('Nomor rekening berhasil disalin!');
+        // alert('Nomor rekening berhasil disalin!');
 
         // Reset after 2 seconds
         setTimeout(() => {
