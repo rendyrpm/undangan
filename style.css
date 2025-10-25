@@ -872,7 +872,10 @@ body {
   margin: 0 auto;
 }
 
-
+/* Jarak antara judul "Galeri Foto" dan foto pertama */
+#gallery h2 {
+  margin-bottom: 2.5rem; /* kamu bisa ubah ke 2.5rem atau 3rem kalau mau lebih jauh */
+}
 
 footer {
   padding: 3rem;
