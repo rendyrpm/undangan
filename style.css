@@ -396,6 +396,11 @@ body {
   padding-bottom: 5rem;
 }
 
+.main-content .fade-up {
+  position: relative !important;
+  top: 1.5rem !important; /* ubah ke 1.5rem atau 2rem untuk lebih turun */
+}
+
 .main-content h2 {
   color: var(--pink);
   font-family: 'Sacramento';
@@ -465,6 +470,21 @@ body {
 .main-content .couple .col-4 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .slide-right .row {
+    --bs-gutter-x: 0 !important; /* Hilangkan jarak antar kolom hanya di mobile */
+  }
+
+  .slide-right .col-4 {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .slide-right .col-8 {
+    padding-left: 0rem !important; /* sedikit jarak biar teks tidak nempel ke foto */
+  }
 }
 
 .main-content .heart {
