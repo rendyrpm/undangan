@@ -112,6 +112,12 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .hero-top h1 {
+    margin-top: 5rem !important;   /* geser turun 2rem */
+  }
+}
+
 @media (max-width: 576px) {
   .hero main {
     height: 92vh;
@@ -350,6 +356,12 @@ body {
 
   .scroll-indicator {
     bottom: -2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .verse-container {
+    transform: scale(1.2) translateY(-60px) !important;
   }
 }
 
