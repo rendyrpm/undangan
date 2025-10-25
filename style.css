@@ -92,6 +92,12 @@ body {
     margin-top: 0.5rem;
   }
 
+  @media (max-width: 768px) {
+  .hero-top h1 {
+    margin-top: 5rem !important;   /* geser turun 2rem */
+  }
+}
+
   /* Bagian bawah (countdown + tombol) */
   .hero-bottom {
     margin-bottom: 10rem;
