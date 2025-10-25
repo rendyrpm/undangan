@@ -671,6 +671,12 @@ body {
   border-color: #8a9bb3;
 }
 
+@media (min-width: 992px) {
+  #rsvp form {
+    margin-left: 100px !important;  /* geser kanan tanpa mengubah ukuran kolom */
+  }
+}
+
 /* Gifts Styling */
 .main-content #gifts {
   padding-bottom: 8rem;
