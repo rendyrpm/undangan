@@ -537,6 +537,10 @@ body {
   font-size: 1.1rem;
 }
 
+#info .alamat {
+  margin-bottom: 2rem; /* atur sesuai kebutuhan, misal 2rem untuk lebih lebar */
+}
+
 .main-content .description {
   font-size: 1rem;
   font-weight: 300;
