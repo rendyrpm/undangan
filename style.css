@@ -409,6 +409,19 @@ body {
   margin-bottom: 1rem;
 }
 
+.resepsi-title {
+  font-size: 4.5rem !important;   /* lebih kecil agar muat di satu baris */
+  line-height: 1.1 !important;
+  white-space: nowrap !important; /* cegah teks turun ke baris baru */
+  text-align: center;             /* pastikan tetap rata tengah */
+}
+
+@media (max-width: 768px) {
+  .resepsi-title {
+    font-size: 3.5rem !important; /* versi mobile, tetap satu baris */
+  }
+}
+
 .main-content p {
   font-size: 1.1rem;
   color: #666;
